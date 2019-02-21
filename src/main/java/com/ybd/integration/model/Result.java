@@ -17,14 +17,22 @@ public class Result <T> {
 
     private T data;
 
-    public Result() {
-
+    public static <T> Result<T> ok(T data)
+    {
+        Result<T> result = new Result<>();
+        result.msg = "ok";
+        result.code = 200;
+        result.data = data;
+        return result;
     }
 
-    public Result(int code, String msg, T data) {
-        this.code = code;
-        this.msg = msg;
-        this.data = data;
+    public static <T> Result<T> fail(int code, String msg, T data)
+    {
+        Result<T> result = new Result<>();
+        result.code = code;
+        result.msg = msg;
+        result.data = data;
+        return result;
     }
 
 

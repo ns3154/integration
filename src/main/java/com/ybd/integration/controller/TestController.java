@@ -36,7 +36,7 @@ public class TestController
         {
             return new Result<>();
         }
-        return new Result<List<UserVO>>(200, "ok", testService.test());
+        return Result.ok(testService.test());
     }
 
 }
